@@ -6,7 +6,7 @@ describe('AccessPage', () => {
   let component: AccessPage;
   let fixture: ComponentFixture<AccessPage>;
 
-  beforeEach((() => {
+  beforeEach( (() => {
     fixture = TestBed.createComponent(AccessPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
