@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  user: { usuario: string, password: string };
 
-  constructor() {}
+  constructor() {
+    this.user = { usuario: '', password: '' };
+  }
 
+  autenticar() {
+    if (this.user.usuario === "admin" && this.user.password === "pswadmin123") {
+      alert("¡Autenticación exitosa!");
+      // Aquí puedes navegar a otra página si lo necesitas
+    } else {
+      alert("Usuario o contraseña incorrectos. Intente nuevamente.");
+    }
+  }
 }

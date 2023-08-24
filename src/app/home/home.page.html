@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>SOPORTE MAVIGPS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="ion-text-center">
+    <img src="assets/icon/favicon.png" alt="">
+    <h5>SOPORTE MAVIGPS</h5>
   </div>
+
+  <div class="ion-text-center">
+    <h1>Autenticación de Administrador</h1>
+
+          <ion-list>
+            <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>    
+            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+            
+          </ion-list>
+
+    <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
+  </div>
+
+  <ion-footer>
+    <div class="ion-text-center">
+      <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
+      <a href="/">Inicio</a> | 
+      <a href="https://mavigps.com/">Contacto</a>
+    </div>
+  </ion-footer>
 </ion-content>
