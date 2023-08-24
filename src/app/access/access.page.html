@@ -6,25 +6,12 @@
 
 <ion-content>
 
-  <!-- Sección de navegación -->
-  <ion-menu>
-    <ion-list>
-      <ion-item button detail="true" menuClose>
-        <ion-label>COMANDOS</ion-label>
-        <ion-menu-toggle>
-          <ion-list>
-            <ion-item href="gv55.html">GV55</ion-item>
-            <ion-item href="gv75.html">GV75</ion-item>
-            <ion-item href="gv300.html">GV300</ion-item>
-            <ion-item href="configColdTruck.html">CONFIG. COULDTRUCK</ion-item>
-          </ion-list>
-        </ion-menu-toggle>
-      </ion-item>
+  <div style="display: flex; justify-content: space-between;">
+    <ion-button (click)="presentActionSheet()">comandos</ion-button>
+    <ion-button>templates</ion-button>
+    <ion-button>agendamiento</ion-button>
+  </div>
 
-      <ion-item href="templates.html">TEMPLATES</ion-item>
-      <ion-item href="agendamiento.html">AGENDAMIENTO</ion-item>
-    </ion-list>
-  </ion-menu>
 
   <!-- Contenido principal -->
   <div class="ion-padding">

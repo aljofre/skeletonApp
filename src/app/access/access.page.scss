@@ -1,77 +1,40 @@
-// Definición de colores
-$background-color: white;
-$primary-color: rgb(212, 57, 57); // Ajusta este rojo según tu preferencia.
-$secondary-color: #dadada; // Un color de fondo ligeramente grisáceo para un contraste suave
-
-/* Contenido general */
-ion-content {
-  background-color: $background-color;
-}
-
-/* Cabecera */
-ion-header {
-  ion-toolbar {
-    background-color: $primary-color;
-    color: $background-color; // Texto blanco en fondo rojo
+// Modo oscuro
+body.dark {
+  // Para el header
+  ion-header {
+    ion-toolbar {
+      --background: #1E1E1E; // Color de fondo oscuro para el toolbar
+      --color: #FFFFFF; // Color de texto oscuro para el toolbar
+    }
   }
-}
 
-/* Navegación y menú desplegable */
-nav {
-  ul.nav {
-    background-color: $primary-color;
+  // Contenido principal
+  ion-content {
+    --background: #1E1E1E; // Color de fondo oscuro para el contenido
 
-    li.nav-item {
-      a.nav-link {
-        color: $background-color;
+    ion-button {
+      --background: #333333; // Color de fondo oscuro para botones
+      --color: #FFFFFF; // Color de texto oscuro para botones
+    }
 
-        &:hover {
-          background-color: darken($primary-color, 10%); // Al pasar el cursor, oscurece un poco
-        }
+    ion-card {
+      --background: #333333; // Color de fondo oscuro para las tarjetas
+
+      ion-card-header {
+        --color: #FFFFFF; // Color de texto oscuro para el encabezado de la tarjeta
       }
 
-      &.dropdown .dropdown-menu {
-        background-color: $background-color;
-        a.dropdown-item {
-          color: $primary-color;
-
-          &:hover {
-            background-color: $secondary-color; // Al pasar el cursor, usa un fondo grisáceo
-          }
-        }
+      ion-card-content {
+        --color: #FFFFFF; // Color de texto oscuro para el contenido de la tarjeta
       }
     }
   }
-}
 
-/* Cards */
-.card {
-  margin: 20px 0;
-  border-color: $primary-color;
-
-  .card-body {
-    h5.card-title {
-      color: $primary-color;
+  // Footer
+  ion-footer {
+    ion-toolbar {
+      --background: #1E1E1E; // Color de fondo oscuro para el toolbar del footer
+      --color: #FFFFFF; // Color de texto oscuro para el toolbar del footer
     }
-
-    a.btn {
-      margin-top: 10px;
-
-      &:not([class*="btn-"]) { // Si no tiene un color específico ya definido
-        background-color: $primary-color;
-        color: $background-color;
-      }
-    }
-  }
-}
-
-/* Pie de página */
-ion-footer {
-  background-color: $primary-color;
-  color: $background-color;
-
-  a {
-    color: $background-color;
-    text-decoration: underline;
   }
 }
