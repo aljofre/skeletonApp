@@ -1,0 +1,77 @@
+// Definición de colores
+$background-color: white;
+$primary-color: rgb(212, 57, 57); // Ajusta este rojo según tu preferencia.
+$secondary-color: #dadada; // Un color de fondo ligeramente grisáceo para un contraste suave
+
+/* Contenido general */
+ion-content {
+  background-color: $background-color;
+}
+
+/* Cabecera */
+ion-header {
+  ion-toolbar {
+    background-color: $primary-color;
+    color: $background-color; // Texto blanco en fondo rojo
+  }
+}
+
+/* Navegación y menú desplegable */
+nav {
+  ul.nav {
+    background-color: $primary-color;
+
+    li.nav-item {
+      a.nav-link {
+        color: $background-color;
+
+        &:hover {
+          background-color: darken($primary-color, 10%); // Al pasar el cursor, oscurece un poco
+        }
+      }
+
+      &.dropdown .dropdown-menu {
+        background-color: $background-color;
+        a.dropdown-item {
+          color: $primary-color;
+
+          &:hover {
+            background-color: $secondary-color; // Al pasar el cursor, usa un fondo grisáceo
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Cards */
+.card {
+  margin: 20px 0;
+  border-color: $primary-color;
+
+  .card-body {
+    h5.card-title {
+      color: $primary-color;
+    }
+
+    a.btn {
+      margin-top: 10px;
+
+      &:not([class*="btn-"]) { // Si no tiene un color específico ya definido
+        background-color: $primary-color;
+        color: $background-color;
+      }
+    }
+  }
+}
+
+/* Pie de página */
+ion-footer {
+  background-color: $primary-color;
+  color: $background-color;
+
+  a {
+    color: $background-color;
+    text-decoration: underline;
+  }
+}

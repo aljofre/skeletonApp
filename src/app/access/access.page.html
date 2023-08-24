@@ -1,13 +1,80 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Access</ion-title>
+    <ion-title>SOPORTE MAVIGPS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Access</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <!-- Sección de navegación -->
+  <ion-menu>
+    <ion-list>
+      <ion-item button detail="true" menuClose>
+        <ion-label>COMANDOS</ion-label>
+        <ion-menu-toggle>
+          <ion-list>
+            <ion-item href="gv55.html">GV55</ion-item>
+            <ion-item href="gv75.html">GV75</ion-item>
+            <ion-item href="gv300.html">GV300</ion-item>
+            <ion-item href="configColdTruck.html">CONFIG. COULDTRUCK</ion-item>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-item>
+
+      <ion-item href="templates.html">TEMPLATES</ion-item>
+      <ion-item href="agendamiento.html">AGENDAMIENTO</ion-item>
+    </ion-list>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <div class="ion-padding">
+
+    <!-- Primera columna -->
+    <ion-card>
+      <img src="assets/logo_denwa.png" alt="DENWA Logo">
+      <ion-card-header>
+        <ion-card-title>DENWA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Plataforma Denwa
+        <ion-button expand="full" href="https://gps-operation.mavimovil.com/#/signin">GO DENWA</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Segunda columna -->
+    <ion-card>
+      <img src="assets/logo_qa.png" alt="Q-ANALITICS Logo">
+      <ion-card-header>
+        <ion-card-title>Q-ANALITICS</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Plataforma Q-Analitics
+        <ion-button expand="full" href="https://www.qanalytics.cl/maviadmin/">GO Q-Analitics</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tercera columna -->
+    <ion-card>
+      <img src="assets/consulta_imei.png" alt="Consulta IMEI Logo">
+      <ion-card-header>
+        <ion-card-title>CONSULTA IMEI Q</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Consulta Imei
+        <ion-button expand="full" href="https://www.mavigps.cl/administrador/consulta_imei.aspx">GO Consulta</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-text-center">
+      <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
+      <a href="/">Inicio</a> | 
+      <a href="https://mavigps.com/">Contacto</a>
+    </div>
+  </ion-toolbar>
+</ion-footer>
