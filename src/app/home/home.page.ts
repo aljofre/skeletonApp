@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,14 @@ import { Component } from '@angular/core';
 export class HomePage {
   user: { usuario: string, password: string };
 
-  constructor() {
+  constructor(private router: Router) {
     this.user = { usuario: '', password: '' };
   }
 
   autenticar() {
     if (this.user.usuario === "admin" && this.user.password === "pswadmin123") {
       alert("¡Autenticación exitosa!");
-      // Aquí puedes navegar a otra página si lo necesitas
+      this.router.navigateByUrl('/access');
     } else {
       alert("Usuario o contraseña incorrectos. Intente nuevamente.");
     }

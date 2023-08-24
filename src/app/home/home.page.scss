@@ -1,27 +1,47 @@
-#container {
-  text-align: center;
+// Definición de colores
+$background-color: white;
+$primary-color: rgb(114, 0, 0); // Puedes ajustar este rojo según tu preferencia.
+$secondary-color: #9c6a6a; // Un color de fondo ligeramente grisáceo para un contraste suave
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* Contenido general */
+ion-content {
+  background-color: $background-color;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* Cabecera */
+ion-header {
+  ion-toolbar {
+    background-color: $primary-color;
+    color: $background-color; // Texto blanco en fondo rojo
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+/* Texto centrado */
+.ion-text-center {
+  color: $primary-color; // Texto rojo en fondo blanco
 }
 
-#container a {
-  text-decoration: none;
+/* Botón de ingreso */
+ion-button {
+  --background: $primary-color; // Fondo rojo
+  --color: $background-color; // Texto blanco
+  --background-activated: darken($primary-color, 15%); // Fondo más oscuro cuando se activa
+}
+
+/* Input fields */
+ion-input {
+  --background: $secondary-color; // Fondo ligeramente grisáceo
+  --color: $primary-color; // Texto rojo
+  --border-color: $primary-color; // Borde rojo
+}
+
+/* Pie de página */
+ion-footer {
+  background-color: $primary-color;
+  color: $background-color;
+
+  a {
+    color: $background-color;
+    text-decoration: underline;
+  }
 }
