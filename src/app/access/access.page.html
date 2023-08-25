@@ -64,5 +64,10 @@
       <a href="/">Inicio</a> | 
       <a href="https://mavigps.com/">Contacto</a>
     </div>
+    <ion-item>
+      <ion-label>Modo Oscuro</ion-label>
+      <ion-toggle (ionChange)="toggleDarkMode()" [checked]="darkMode"></ion-toggle>
+    </ion-item>
+    
   </ion-toolbar>
 </ion-footer>
