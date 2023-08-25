@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>SOPORTE MAVIGPS</ion-title>
+    <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()">SOPORTE MAVIGPS</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,6 +16,13 @@
           <ion-list>
             <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>    
             <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+            <ion-input [@inputAnimation]="nombreState" (ionChange)="nombreState='normal'" placeholder="Nombre"></ion-input>
+            <ion-input [@inputAnimation]="apellidoState" (ionChange)="apellidoState='normal'" placeholder="Apellido"></ion-input>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
             
           </ion-list>
 
