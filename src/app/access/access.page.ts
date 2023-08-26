@@ -8,6 +8,20 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class AccessPage implements OnInit {
 
+  titleState = 'center';
+  nombreState = 'normal';
+  apellidoState = 'normal';
+
+  animateTitle() {
+    if (this.titleState === 'center') {
+      this.titleState = 'right';
+    } else if (this.titleState === 'right') {
+      this.titleState = 'left';
+    } else {
+      this.titleState = 'center';
+    }
+  }
+
   constructor(public actionSheetController: ActionSheetController) { }
 
 

@@ -1,37 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-title>APP MOVIL</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+        <ion-title>APP MOVIL</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-text-center">
+        <img src="assets/logo.png" alt="Logo">
+        <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()">SOPORTE MAVIGPS</ion-title>
+    </div>
+  
+    <div class="ion-text-center">
+        <h1>Autenticación de Administrador</h1>
+        <ion-list>
 
-<ion-content>
-  <div class="ion-text-center">
-      <img src="assets/logo.png" alt="Logo">
-      <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()">SOPORTE MAVIGPS</ion-title>
-  </div>
+            <ion-input type="text" [(ngModel)]="user.usuario" placeholder="Usuario"></ion-input>    
+            <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
+           
+        </ion-list>
+        <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
+    </div>
 
-  <div class="ion-text-center">
-      <h1>Autenticación de Administrador</h1>
-      <ion-list>
-          <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <ion-input type="text" [(ngModel)]="user.usuario" placeholder="Usuario"></ion-input>    
-          <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
-          <ion-input [@inputAnimation]="nombreState" (ionChange)="nombreState='normal'" placeholder="Nombre"></ion-input>
-          <ion-input [@inputAnimation]="apellidoState" (ionChange)="apellidoState='normal'" placeholder="Apellido"></ion-input>
-      </ion-list>
-      <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
-  </div>
+   
 
+  </ion-content>
+  
   <ion-footer>
-      <div class="ion-text-center">
-          <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
-          <a href="/">Inicio</a> | 
-          <a href="https://mavigps.com/">Contacto</a>
-      </div>
-        
+    <div class="ion-text-center">
+        <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
+        <a href="/">Inicio</a> | 
+        <a href="https://mavigps.com/">Contacto</a>
+    </div>
   </ion-footer>
-</ion-content>
+  

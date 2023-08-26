@@ -24,6 +24,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       transition('* => left', animate('2500ms')),
       transition('left => center', animate('2500ms'))
     ]),
+
     trigger('inputAnimation', [
       state('normal', style({
         transform: 'translateX(0)'
@@ -70,7 +71,7 @@ export class HomePage {
   autenticar() {
     if (this.user.usuario === "admin" && this.user.password === "pswadmin123") {
       alert("¡Autenticación exitosa!");
-      this.router.navigateByUrl('/access');
+      this.router.navigate(['/access']);
     } else {
       alert("Usuario o contraseña incorrectos. Intente nuevamente.");
     }
