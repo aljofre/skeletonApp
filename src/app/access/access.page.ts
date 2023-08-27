@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-
+import { ActionSheetController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-access',
@@ -12,9 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class AccessPage {
 
-  loggedInUser: string = 'Usuario123'; 
+  loggedInUser: string = 'Usuario01'; 
   displayForm: boolean = false;
-  animateInput: boolean = false; // <-- Esta es la propiedad que faltaba
+  animateInput: boolean = false;
   client = {
     firstName: '',
     lastName: '',
@@ -22,7 +18,10 @@ export class AccessPage {
     birthDate: null
   };
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    private actionSheetController: ActionSheetController,
+    private alertController: AlertController
+  ) {}
 
   showClientForm() {
     this.displayForm = !this.displayForm;
@@ -38,9 +37,7 @@ export class AccessPage {
   }
 
   clearClientDetails() {
-    this.animateInput = true; // Activar la animación.
-    
-    // Usar setTimeout para resetear la variable después de 1 segundo.
+    this.animateInput = true;
     setTimeout(() => {
       this.animateInput = false;
     }, 1000);
@@ -54,9 +51,8 @@ export class AccessPage {
   }
 
   saveClient() {
-    console.log(this.client); // Aquí puedes guardar el cliente en una base de datos o servicio si lo deseas.
+    console.log(this.client);
     
-    // Después de guardar el cliente, reseteamos los valores y ocultamos el formulario.
     this.client = {
       firstName: '',
       lastName: '',
@@ -64,7 +60,16 @@ export class AccessPage {
       birthDate: null
     };
     this.displayForm = false;
+    this.showSaveSuccessAlert();
   }
 
-  
+  // Método para mostrar el alerta después de guardar.
+  async showSaveSuccessAlert() {
+    const alert = await this.alertController.create({
+      header: '¡Éxito!',
+      message: 'Guardado con éxito.',
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
 }
