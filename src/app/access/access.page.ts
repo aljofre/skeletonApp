@@ -8,9 +8,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class AccessPage {
 
-  
   loggedInUser: string = 'Usuario123'; 
   displayForm: boolean = false;
+  animateInput: boolean = false; // <-- Esta es la propiedad que faltaba
   client = {
     firstName: '',
     lastName: '',
@@ -34,6 +34,13 @@ export class AccessPage {
   }
 
   clearClientDetails() {
+    this.animateInput = true; // Activar la animación.
+    
+    // Usar setTimeout para resetear la variable después de 1 segundo.
+    setTimeout(() => {
+      this.animateInput = false;
+    }, 1000);
+
     this.client = {
       firstName: '',
       lastName: '',
@@ -54,5 +61,4 @@ export class AccessPage {
     };
     this.displayForm = false;
   }
-
 }

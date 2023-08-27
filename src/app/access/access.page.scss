@@ -29,7 +29,20 @@ body.dark {
       }
     }
   }
-
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-right-animation {
+    animation: slideRight 1s 1;
+  }
+  
   // Footer
   ion-footer {
     ion-toolbar {

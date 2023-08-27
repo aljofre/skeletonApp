@@ -14,11 +14,11 @@
       <ion-list>
         <ion-item>
           <ion-label>Nombre:</ion-label>
-          <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
+          <ion-input [(ngModel)]="client.firstName" type="text" [class.slide-right-animation]="animateInput"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Apellido:</ion-label>
-          <ion-input [(ngModel)]="client.lastName" type="text"></ion-input>
+          <ion-input [(ngModel)]="client.lastName" type="text" [class.slide-right-animation]="animateInput"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Nivel de Educación:</ion-label>
