@@ -17,11 +17,7 @@
           <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
         </ion-item>
     
-        <ion-item>
-          <ion-label>Apellido:</ion-label>
-          <ion-input [(ngModel)]="client.lastName" type="text"></ion-input>
-        </ion-item>
-    
+   
         
         <ion-item *ngIf="displayForm">
           <ion-label>Fecha de Nacimiento:</ion-label>
@@ -43,45 +39,41 @@
 
 
   <!-- Contenido principal -->
-  <div class="ion-padding">
+  <div class="container">
+    <div class="track">
+        <ion-card id="DENWA" button="true">
+          <img src="assets/logo_denwa.png" alt="DENWA Logo">
+              <ion-card-content>  [DENWA] 
+                <ion-card-content/>
+                Plataforma Denwa
+                <img src="assets/logo_denwa.png" alt="DENWA Logo">
+              </ion-card-content>
+        </ion-card>
+    </div>
 
-    <!-- Primera columna -->
-    <ion-card>
-      <img src="assets/logo_denwa.png" alt="DENWA Logo">
-      <ion-card-header>
-        <ion-card-title>DENWA</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Plataforma Denwa
-        <ion-button expand="full" href="https://gps-operation.mavimovil.com/#/signin">GO DENWA</ion-button>
-      </ion-card-content>
-    </ion-card>
+    <div class="container">
+      <div class="track">
+          <ion-card id="card" button="true">
+            <img src="assets/logo_qa.png" alt="Q analitis Logo">
+                <ion-card-content> [ Q analitics ]
+                  <ion-card-content/>
+                  Plataforma Q analitics
+                  <img src="assets/logo_q.png" alt="Q-Amalitico Logo">
+                </ion-card-content>
+          </ion-card>
+      </div>
 
-    <!-- Segunda columna -->
-    <ion-card>
-      <img src="assets/logo_qa.png" alt="Q-ANALITICS Logo">
-      <ion-card-header>
-        <ion-card-title>Q-ANALITICS</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Plataforma Q-Analitics
-        <ion-button expand="full" href="https://www.qanalytics.cl/maviadmin/">GO Q-Analitics</ion-button>
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Tercera columna -->
-    <ion-card>
-      <img src="assets/consulta_imei.png" alt="Consulta IMEI Logo">
-      <ion-card-header>
-        <ion-card-title>CONSULTA IMEI Q</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Consulta Imei
-        <ion-button expand="full" href="https://www.mavigps.cl/administrador/consulta_imei.aspx">GO Consulta</ion-button>
-      </ion-card-content>
-    </ion-card>
-
-  </div>
+      <div class="container">
+        <div class="track">
+            <ion-card id="card" button="true">
+              <img src="assets/logo_q.png" alt="DENWA Logo">
+                  <ion-card-content> DENWA 
+                    <ion-card-content/>
+                    Plataforma Denwa
+                    <img src="assets/logo_denwa.png" alt="DENWA Logo">
+                  </ion-card-content>
+            </ion-card>
+        </div>
   
 </ion-content>
 

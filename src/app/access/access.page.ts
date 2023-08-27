@@ -8,7 +8,7 @@ import { ActionSheetController, AlertController } from '@ionic/angular';
 })
 export class AccessPage {
 
-  loggedInUser: string = 'Usuario01'; 
+  loggedInUser: string = 'Usuario123'; 
   displayForm: boolean = false;
   animateInput: boolean = false;
   client = {
