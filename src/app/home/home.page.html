@@ -1,35 +1,70 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>APP MOVIL</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <div class="ion-text-center">
-        <img src="assets/logo.png" alt="Logo">
-        <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()">SOPORTE MAVIGPS</ion-title>
-    </div>
-  
-    <div class="ion-text-center">
-        <h1>Autenticación de Administrador</h1>
-        <ion-list>
+  <ion-toolbar>
+    <ion-title>SOPORTE MAVIGPS</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
 
-            <ion-input type="text" [(ngModel)]="user.usuario" placeholder="Usuario"></ion-input>    
-            <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
-           
-        </ion-list>
-        <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
-    </div>
+<ion-content>
 
+  <div style="display: flex; justify-content: space-between;">
+    <ion-button (click)="presentActionSheet()">comandos</ion-button>
+    <ion-button>templates</ion-button>
+    <ion-button>agendamiento</ion-button>
+  </div>
+
+
+  <!-- Contenido principal -->
+  <div class="ion-padding">
+
+    <!-- Primera columna -->
+    <ion-card>
+      <img src="assets/logo_denwa.png" alt="DENWA Logo">
+      <ion-card-header>
+        <ion-card-title>DENWA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Plataforma Denwa
+        <ion-button expand="full" href="https://gps-operation.mavimovil.com/#/signin">GO DENWA</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Segunda columna -->
+    <ion-card>
+      <img src="assets/logo_qa.png" alt="Q-ANALITICS Logo">
+      <ion-card-header>
+        <ion-card-title>Q-ANALITICS</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Plataforma Q-Analitics
+        <ion-button expand="full" href="https://www.qanalytics.cl/maviadmin/">GO Q-Analitics</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tercera columna -->
+    <ion-card>
+      <img src="assets/consulta_imei.png" alt="Consulta IMEI Logo">
+      <ion-card-header>
+        <ion-card-title>CONSULTA IMEI Q</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Consulta Imei
+        <ion-button expand="full" href="https://www.mavigps.cl/administrador/consulta_imei.aspx">GO Consulta</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-text-center">
+      <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
+      <a href="/">Inicio</a> | 
+      <a href="https://mavigps.com/">Contacto</a>
+    </div>
    
-
-  </ion-content>
-  
-  <ion-footer>
-    <div class="ion-text-center">
-        <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
-        <a href="/">Inicio</a> | 
-        <a href="https://mavigps.com/">Contacto</a>
-    </div>
-  </ion-footer>
-  
+    
+  </ion-toolbar>
+</ion-footer>
