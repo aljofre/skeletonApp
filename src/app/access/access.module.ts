@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AccessPageRoutingModule } from './access-routing.module';
 import { AccessPage } from './access.page'; // Corrección aquí
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     AccessPageRoutingModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule
+    MatInputModule
   ],
   declarations: [AccessPage]
 })
