@@ -29,7 +29,11 @@ body.dark {
       }
     }
   }
-  
+
+  mat-form-field {
+    width: 100%;
+  }
+
   @keyframes slideRight {
     from {
       transform: translateX(-100%);

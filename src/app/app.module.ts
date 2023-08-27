@@ -14,6 +14,12 @@ import { AppRoutingModule } from './app-routing.module';
 // Animaciones
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Importaciones de Angular Material
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 // Importaciones de páginas
 import { LoginComponent } from './login/login.component';
 import { HomePage } from './home/home.page';
@@ -36,10 +42,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule, 
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // Módulos de Angular Material
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // Proveedor necesario para MatDatepicker
+    MatNativeDateModule
   ],
   bootstrap: [AppComponent]
 })

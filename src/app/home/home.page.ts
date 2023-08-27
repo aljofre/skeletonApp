@@ -13,7 +13,7 @@ export class HomePage {
   client = {
     firstName: '',
     lastName: '',
-    birthDate: ''
+    birthDate: null
   };
 
   constructor(private actionSheetController: ActionSheetController) {}
@@ -45,7 +45,7 @@ export class HomePage {
   saveClient() {
     console.log('Cliente guardado temporalmente:', this.client);
     this.displayForm = false;
-    this.client = { firstName: '', lastName: '', birthDate: '' }; // Reset del formulario
+    this.client = { firstName: '', lastName: '', birthDate: null }; // Reset del formulario
   }
 
   // Otros métodos y lógica pueden seguir aquí...
