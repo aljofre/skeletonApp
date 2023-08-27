@@ -3,8 +3,8 @@ import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  templateUrl: 'homepage',
+  styleUrls: ['homepage']
 })
 export class HomePage {
   
@@ -32,7 +32,7 @@ export class HomePage {
           console.log('GV75 clicked');
         }
       }]
-    })
+    });
     await actionSheet.present();
   }
 

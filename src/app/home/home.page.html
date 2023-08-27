@@ -1,24 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>SOPORTE MAVIGPS</ion-title>
-    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <div style="display: flex; justify-content: space-between;">
     <ion-button (click)="presentActionSheet()">Comandos</ion-button>
     <ion-button (click)="showClientForm()">INGRESAR CLIENTE</ion-button>
+
     <div *ngIf="displayForm">
       <ion-list>
         <ion-item>
           <ion-label>Nombre:</ion-label>
           <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
         </ion-item>
-    
-   
-        
+
         <ion-item *ngIf="displayForm">
           <ion-label>Fecha de Nacimiento:</ion-label>
           <mat-form-field appearance="fill">
@@ -28,53 +25,47 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </ion-item>
-        
-        
-    
+
         <ion-button (click)="saveClient()">Guardar</ion-button>
       </ion-list>
     </div>
-   
   </div>
-
 
   <!-- Contenido principal -->
   <div class="container">
     <div class="track">
-        <ion-card id="DENWA" button="true">
+      <ion-card id="DENWA" button="true">
+        <img src="assets/logo_denwa.png" alt="DENWA Logo">
+        <ion-card-content>
+          [DENWA]
+          Plataforma Denwa
           <img src="assets/logo_denwa.png" alt="DENWA Logo">
-              <ion-card-content>  [DENWA] 
-                <ion-card-content/>
-                Plataforma Denwa
-                <img src="assets/logo_denwa.png" alt="DENWA Logo">
-              </ion-card-content>
-        </ion-card>
+        </ion-card-content>
+      </ion-card>
     </div>
 
-    <div class="container">
-      <div class="track">
-          <ion-card id="card" button="true">
-            <img src="assets/logo_qa.png" alt="Q analitis Logo">
-                <ion-card-content> [ Q analitics ]
-                  <ion-card-content/>
-                  Plataforma Q analitics
-                  <img src="assets/logo_q.png" alt="Q-Amalitico Logo">
-                </ion-card-content>
-          </ion-card>
-      </div>
+    <div class="track">
+      <ion-card id="card1" button="true">
+        <img src="assets/logo_qa.png" alt="Q analitis Logo">
+        <ion-card-content>
+          [ Q analitics ]
+          Plataforma Q analitics
+          <img src="assets/logo_q.png" alt="Q-Analítico Logo">
+        </ion-card-content>
+      </ion-card>
+    </div>
 
-      <div class="container">
-        <div class="track">
-            <ion-card id="card" button="true">
-              <img src="assets/logo_q.png" alt="DENWA Logo">
-                  <ion-card-content> DENWA 
-                    <ion-card-content/>
-                    Plataforma Denwa
-                    <img src="assets/logo_denwa.png" alt="DENWA Logo">
-                  </ion-card-content>
-            </ion-card>
-        </div>
-  
+    <div class="track">
+      <ion-card id="card2" button="true">
+        <img src="assets/logo_q.png" alt="DENWA Logo">
+        <ion-card-content>
+          DENWA 
+          Plataforma Denwa
+          <img src="assets/logo_denwa.png" alt="DENWA Logo">
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
 
 <ion-footer>
@@ -84,7 +75,7 @@
       <a href="/">Inicio</a> | 
       <a href="https://mavigps.com/">Contacto</a>
     </div>
-   
+
     
   </ion-toolbar>
 </ion-footer>
