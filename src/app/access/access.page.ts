@@ -5,7 +5,31 @@ import { Component } from '@angular/core';
   templateUrl: 'access.page.html',
   styleUrls: ['access.page.scss']
 })
-
 export class AccessPage {
-    // Código para tu página de acceso, si necesitas algo específico.
+
+  displayForm: boolean = false;
+  client = {
+    firstName: '',
+    lastName: '',
+    birthDate: null
+  };
+
+  constructor() {}
+
+  showClientForm() {
+    this.displayForm = !this.displayForm;
+  }
+
+  saveClient() {
+    // Aquí puedes implementar la lógica para guardar el cliente.
+    console.log(this.client);
+    this.client = {
+      firstName: '',
+      lastName: '',
+      birthDate: null
+    };
+    this.displayForm = false;
+  }
+
+  // Otros métodos y lógica pueden seguir aquí...
 }

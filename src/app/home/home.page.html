@@ -8,9 +8,29 @@
 <ion-content>
 
   <div style="display: flex; justify-content: space-between;">
-    <ion-button (click)="presentActionSheet()">comandos</ion-button>
-    <ion-button>templates</ion-button>
-    <ion-button>agendamiento</ion-button>
+    <ion-button (click)="presentActionSheet()">Comandos</ion-button>
+    <ion-button (click)="showClientForm()">INGRESAR CLIENTE</ion-button>
+    <div *ngIf="displayForm">
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Apellido:</ion-label>
+          <ion-input [(ngModel)]="client.lastName" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Fecha de Nacimiento:</ion-label>
+          <ion-datetime [(ngModel)]="client.birthDate" displayFormat="DD/MM/YYYY"></ion-datetime>
+        </ion-item>
+    
+        <ion-button (click)="saveClient()">Guardar</ion-button>
+      </ion-list>
+    </div>
+   
   </div>
 
 
