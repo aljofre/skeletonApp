@@ -32,7 +32,7 @@ export class HomePage {
           console.log('GV75 clicked');
         }
       }]
-    });
+    })
     await actionSheet.present();
   }
 
