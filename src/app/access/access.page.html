@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Acceso MAVIGPS</ion-title>
+    <ion-label class="ion-margin-end">Usuario: {{ loggedInUser }}</ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -20,16 +21,25 @@
           <ion-input [(ngModel)]="client.lastName" type="text"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-label>Nivel de Educación:</ion-label>
+          <ion-select [(ngModel)]="client.educationLevel">
+            <ion-select-option value="Primaria">Primaria</ion-select-option>
+            <ion-select-option value="Secundaria">Secundaria</ion-select-option>
+            <ion-select-option value="Universitaria">Universitaria</ion-select-option>
+            <!-- Puedes agregar más opciones si lo necesitas -->
+          </ion-select>
+        </ion-item>
+        <ion-item>
           <ion-label>Fecha de Nacimiento:</ion-label>
           <ion-datetime [(ngModel)]="client.birthDate" displayFormat="DD/MM/YYYY"></ion-datetime>
         </ion-item>
         <ion-button (click)="saveClient()">Guardar</ion-button>
+        <ion-button (click)="clearClientDetails()">Limpiar</ion-button>
+        <ion-button (click)="showClientDetails()">Mostrar</ion-button>
       </ion-list>
     </div>
   </div>
 
-  <!-- Aquí puedes agregar más contenido si lo necesitas -->
-  
 </ion-content>
 
 <ion-footer>
