@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ThemeService {
+export class MyservicioService {
 
-  private darkMode = false;
+  private apiUrl = 'https://api.example.com/data'; // URL de ejemplo para una API
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  toggleTheme() {
-    this.darkMode = !this.darkMode;
-    document.body.classList.toggle('dark', this.darkMode);
+  // Ejemplo de método para obtener datos de una API
+  fetchData() {
+    return this.http.get(this.apiUrl);
   }
 
-  isDarkMode() {
-    return this.darkMode;
-  }
+  // Puedes agregar más métodos y lógica según lo necesites
+  // ...
 }
