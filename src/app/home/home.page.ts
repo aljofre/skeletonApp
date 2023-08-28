@@ -3,8 +3,8 @@ import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'homepage',
-  styleUrls: ['homepage']
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss']
 })
 export class HomePage {
   

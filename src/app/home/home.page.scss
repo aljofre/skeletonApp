@@ -2,19 +2,19 @@
 
 // Definición de colores
 $background-color: white;
-$primary-color: rgb(114, 0, 0); // Puedes ajustar este rojo según tu preferencia.
+$primary-color: rgb(114, 0, 0); // Ajusta este rojo según tu preferencia.
 $secondary-color: #9c6a6a; // Un color de fondo ligeramente grisáceo para un contraste suave
 
 /* Contenido general */
 ion-content {
-  background-color: $background-color;
+  --background: $background-color;
 }
 
 /* Cabecera */
 ion-header {
   ion-toolbar {
-    background-color: $primary-color;
-    color: $background-color; // Texto blanco en fondo rojo
+    --background: $primary-color;
+    --color: $background-color; // Texto blanco en fondo rojo
   }
 }
 
@@ -39,8 +39,8 @@ ion-input {
 
 /* Pie de página */
 ion-footer {
-  background-color: $primary-color;
-  color: $background-color;
+  --background: $primary-color;
+  --color: $background-color;
 
   a {
     color: $background-color;
