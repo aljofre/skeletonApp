@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomePage {
     birthDate: null
   };
 
-  constructor(private actionSheetController: ActionSheetController) {}
+  constructor(private actionSheetController: ActionSheetController, private router: Router) {}
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -38,7 +39,11 @@ export class HomePage {
 
   // Método para mostrar el formulario de cliente
   showClientForm() {
-    this.displayForm = true;
+    this.router.navigate(['/access']);
+
+    // Si necesitas navegar a otra página cuando hagas clic en "INGRESAR CLIENTE", entonces usa el siguiente código:
+    // this.router.navigate(['/access']); // Por ejemplo, si quieres navegar a la página 'access.page.html'.
+    // Pero si solo quieres mostrar el formulario en la misma página, no necesitas la navegación.
   }
 
   // Método para guardar temporalmente el cliente ingresado y ocultar el formulario

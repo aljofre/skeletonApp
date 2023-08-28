@@ -102,7 +102,7 @@ export class LoginComponent {
     
         if (this.user.usuario === "admin" && this.user.password === "1234") {
           alert("¡Autenticación exitosa!");
-          this.router.navigate(['/access']);
+          this.router.navigate(['/home']);
         } else {
           alert("Usuario o contraseña incorrectos. Intente nuevamente.");
           this.shakeState = 'active';
