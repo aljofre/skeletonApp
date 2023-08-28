@@ -30,7 +30,10 @@ export class AccessPage {
   async showClientDetails() {
     const alert = await this.alertController.create({
       header: 'Detalles del Cliente',
-      message: `${this.client.firstName} ${this.client.lastName}`,
+      message: `${this.client.firstName}
+                  ${this.client.lastName} 
+                   ${this.client.educationLevel} 
+                     ${this.client.birthDate}`,
       buttons: ['OK']
     });
     await alert.present();
