@@ -19,7 +19,11 @@ body.dark {
 
     ion-card {
       --background: #333333; // Color de fondo oscuro para las tarjetas
+      width: 300px;  // Ancho mediano que prefieras
+      height: 400px; // Alto mediano que prefieras
+      margin: 0 auto; // Centra la card horizontalmente si la card está dentro de un contenedor flex
 
+    }
       ion-card-header {
         --color: #FFFFFF; // Color de texto oscuro para el encabezado de la tarjeta
       }
@@ -54,4 +58,4 @@ body.dark {
       --color: #FFFFFF; // Color de texto oscuro para el toolbar del footer
     }
   }
-}
+

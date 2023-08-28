@@ -2,8 +2,9 @@
 
 // Definición de colores
 $background-color: white;
-$primary-color: rgb(114, 0, 0); // Ajusta este rojo según tu preferencia.
-$secondary-color: #9c6a6a; // Un color de fondo ligeramente grisáceo para un contraste suave
+$primary-color: rgb(114, 0, 0); 
+$secondary-color: #9c6a6a;
+$dark-color: #333; // Nuevo color oscuro
 
 /* Contenido general */
 ion-content {
@@ -14,27 +15,46 @@ ion-content {
 ion-header {
   ion-toolbar {
     --background: $primary-color;
-    --color: $background-color; // Texto blanco en fondo rojo
+    --color: $background-color;
   }
 }
 
 /* Texto centrado */
 .ion-text-center {
-  color: $primary-color; // Texto rojo en fondo blanco
+  color: $primary-color;
 }
 
 /* Botón de ingreso */
 ion-button {
-  --background: $primary-color; // Fondo rojo
-  --color: $background-color; // Texto blanco
-  --background-activated: darken($primary-color, 15%); // Fondo más oscuro cuando se activa
+  --background: $primary-color;
+  --color: $background-color;
+  --background-activated: darken($primary-color, 15%);
 }
 
 /* Input fields */
 ion-input {
-  --background: $secondary-color; // Fondo ligeramente grisáceo
-  --color: $primary-color; // Texto rojo
-  --border-color: $primary-color; // Borde rojo
+  --background: $secondary-color;
+  --color: $primary-color;
+  --border-color: $primary-color;
+}
+
+ion-card {
+  width: auto;  // Ancho mediano que prefieras
+  height: auto; // Alto mediano que prefieras
+  margin: auto; // Centra la card horizontalmente si la card está dentro de un contenedor flex
+}
+/* Ajuste de imagen en ion-card */
+ion-card ion-img {
+  position: center;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+
+}
+
+/* Estilo para los divs con clase track */
+.track {
+  background-color: $dark-color;
 }
 
 /* Pie de página */

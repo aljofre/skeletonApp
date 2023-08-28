@@ -11,7 +11,7 @@ ion-title, ion-label, ion-button {
 /* Estilo para botones con un estilo principal */
 ion-button.primary {
   --background: #ff0000; // Fondo rojo
-  --color: #000; // Letras negras
+  --color: #cccccc; // Letras negras
 
   &:hover {
     --background: darken(#ff0000, 10%); // Oscurecer un poco al pasar el mouse

@@ -10,61 +10,37 @@
     <ion-button (click)="showClientForm()">INGRESAR CLIENTE</ion-button>
   </div>
 
-  <ion-list *ngIf="displayForm">
-    <ion-item>
-      <ion-label>Nombre:</ion-label>
-      <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Fecha de Nacimiento:</ion-label>
-      <mat-form-field appearance="fill">
-        <mat-label>Fecha de Nacimiento</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="client.birthDate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </ion-item>
-
-    <ion-button (click)="saveClient()">Guardar</ion-button>
-  </ion-list>
-
   <!-- Contenido principal -->
-  <div class="container">
+  <div class="ion-text-center">
     <div class="track">
-      <ion-card id="DENWA" button="true">
-        <img src="assets/logo_denwa.png" alt="DENWA Logo">
+      <ion-card id="card" button="true">
         <ion-card-content>
-          [DENWA]
-          Plataforma Denwa
-          <img src="assets/logo_denwa.png" alt="DENWA Logo">
+          <a href="agreGARLAWEBAQUIII">DENWA</a>
+          <ion-img src="assets/logo_denwa.png" alt=""></ion-img>
         </ion-card-content>
       </ion-card>
     </div>
 
     <div class="track">
       <ion-card id="card1" button="true">
-        <img src="assets/logo_qa.png" alt="Q analitis Logo">
         <ion-card-content>
-          [ Q analitics ]
-          Plataforma Q analitics
-          <img src="assets/logo_q.png" alt="Q-Analítico Logo">
+          <a href="agreGARLAWEBAQUIII">Q - ANALITICS</a>
+          <ion-img src="assets/logo_qa.png" alt=""></ion-img>
         </ion-card-content>
       </ion-card>
     </div>
 
+
     <div class="track">
       <ion-card id="card2" button="true">
-        <img src="assets/logo_q.png" alt="DENWA Logo">
         <ion-card-content>
-          DENWA 
-          Plataforma Denwa
-          <img src="assets/logo_denwa.png" alt="DENWA Logo">
+          <a href="agreGARLAWEBAQUIII">CONSULTA IMEI</a>
+          <ion-img src="assets/consulta_imei.png" alt=""></ion-img>
         </ion-card-content>
       </ion-card>
     </div>
   </div>
-
+  
 </ion-content>
 
 <ion-footer>
