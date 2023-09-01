@@ -1,16 +1,31 @@
 import { Component } from '@angular/core';
 import { ActionSheetController, AlertController } from '@ionic/angular';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-access',
   templateUrl: 'access.page.html',
-  styleUrls: ['access.page.scss']
+  styleUrls: ['access.page.scss'],
+  animations: [
+    trigger('slideRight', [
+      state('normal', style({
+        transform: 'translateX(0)'
+      })),
+      state('moved', style({
+        transform: 'translateX(100%)'
+      })),
+      transition('normal => moved', animate('1000ms')),
+      transition('moved => normal', animate('1000ms'))
+    ])
+  ]
 })
+
+
 export class AccessPage {
 
-  loggedInUser: string = 'Usuario123'; 
+  loggedInUser: string = 'Admin'; 
   displayForm: boolean = false;
-  animateInput: boolean = false;
+  animateInput: string = 'normal';
   client = {
     firstName: '',
     lastName: '',
@@ -34,24 +49,24 @@ export class AccessPage {
                   ${this.client.lastName} 
                    ${this.client.educationLevel} 
                      ${this.client.birthDate}`,
-      buttons: ['OK']
+      buttons: ['CERRAR']
     });
     await alert.present();
   }
 
   clearClientDetails() {
-    this.animateInput = true;
+    this.animateInput = 'moved'; 
     setTimeout(() => {
-      this.animateInput = false;
+      this.client = {
+        firstName: '',
+        lastName: '',
+        educationLevel: '',
+        birthDate: null
+      };
+      this.animateInput = 'normal'; 
     }, 1000);
-
-    this.client = {
-      firstName: '',
-      lastName: '',
-      educationLevel: '',
-      birthDate: null
-    };
   }
+  
 
   saveClient() {
     console.log(this.client);
@@ -66,12 +81,11 @@ export class AccessPage {
     this.showSaveSuccessAlert();
   }
 
-  // Método para mostrar el alerta después de guardar.
   async showSaveSuccessAlert() {
     const alert = await this.alertController.create({
       header: '¡Éxito!',
       message: 'Guardado con éxito.',
-      buttons: ['OK']
+      buttons: ['CERRAR']
     });
     await alert.present();
   }

@@ -1,61 +1,24 @@
-// Modo oscuro
-body.dark {
-  // Para el header
-  ion-header {
-    ion-toolbar {
-      --background: #1E1E1E; // Color de fondo oscuro para el toolbar
-      --color: #FFFFFF; // Color de texto oscuro para el toolbar
-    }
+ion-content {
+  --background: #1E1E1E; // Color de fondo oscuro para el contenido
+
+  ion-button {
+    --background: #333333; // Color de fondo oscuro para botones
+    --color: #FFFFFF; // Color de texto oscuro para botones
   }
 
-  // Contenido principal
-  ion-content {
-    --background: #1E1E1E; // Color de fondo oscuro para el contenido
-
-    ion-button {
-      --background: #333333; // Color de fondo oscuro para botones
-      --color: #FFFFFF; // Color de texto oscuro para botones
-    }
-
-    ion-card {
-      --background: #333333; // Color de fondo oscuro para las tarjetas
-      width: 300px;  // Ancho mediano que prefieras
-      height: 400px; // Alto mediano que prefieras
-      margin: 0 auto; // Centra la card horizontalmente si la card está dentro de un contenedor flex
-
-    }
-      ion-card-header {
-        --color: #FFFFFF; // Color de texto oscuro para el encabezado de la tarjeta
+  ion-list {
+    ion-item {
+      ion-label {
+        transition: transform 1s;
       }
 
-      ion-card-content {
-        --color: #FFFFFF; // Color de texto oscuro para el contenido de la tarjeta
+      &.moved ion-label {
+        transform: translateX(100%);
       }
     }
   }
+}
 
-  mat-form-field {
-    width: 100%;
-  }
-
-  @keyframes slideRight {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  .slide-right-animation {
-    animation: slideRight 1s 1;
-  }
-  
-  // Footer
-  ion-footer {
-    ion-toolbar {
-      --background: #1E1E1E; // Color de fondo oscuro para el toolbar del footer
-      --color: #FFFFFF; // Color de texto oscuro para el toolbar del footer
-    }
-  }
-
+mat-form-field {
+  width: 100%;
+}

@@ -1,44 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Acceso MAVIGPS</ion-title>
-    <ion-label class="ion-margin-end">Usuario: {{ loggedInUser }}</ion-label>
+    <ion-title>SOPORTE MAVIGPS</ion-title>
+    <ion-label class="ion-margin-end">{{ loggedInUser }}</ion-label>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
   <div class="ion-padding">
     <ion-button (click)="showClientForm()">INGRESAR CLIENTE</ion-button>
-    
+
     <div *ngIf="displayForm">
       <ion-list>
-        <ion-item>
-          <ion-label>Nombre:</ion-label>
-          <ion-input [(ngModel)]="client.firstName" type="text" [class.slide-right-animation]="animateInput"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Apellido:</ion-label>
-          <ion-input [(ngModel)]="client.lastName" type="text" [class.slide-right-animation]="animateInput"></ion-input>
-        </ion-item>
+              <ion-item [@slideRight]="animateInput">
+                <ion-label>Nombre:</ion-label>
+                <ion-input [(ngModel)]="client.firstName" type="text"></ion-input>
+              </ion-item>
+              <ion-item [@slideRight]="animateInput">
+                <ion-label>Apellido:</ion-label>
+                <ion-input [(ngModel)]="client.lastName" type="text"></ion-input>
+              </ion-item>
+        
         <ion-item>
           <ion-label>Nivel de Educación:</ion-label>
           <ion-select [(ngModel)]="client.educationLevel">
             <ion-select-option value="Primaria">Primaria</ion-select-option>
             <ion-select-option value="Secundaria">Secundaria</ion-select-option>
             <ion-select-option value="Universitaria">Universitaria</ion-select-option>
-            <!-- Puedes agregar más opciones si lo necesitas -->
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label>Fecha de Nacimiento:</ion-label>
-         
           <mat-form-field appearance="fill">
             <mat-label>Fecha de Nacimiento</mat-label>
             <input matInput [matDatepicker]="picker" [(ngModel)]="client.birthDate">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          
         </ion-item>
         <ion-button (click)="saveClient()">Guardar</ion-button>
         <ion-button (click)="clearClientDetails()">Limpiar</ion-button>
@@ -46,15 +43,13 @@
       </ion-list>
     </div>
   </div>
-
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
     <div class="ion-text-center">
       <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
-      <a href="/">Inicio</a> | 
-      <a href="https://mavigps.com/">Contacto</a>
+      <a href="/">Inicio</a> | <a href="https://mavigps.com/">Contacto</a>
     </div>
   </ion-toolbar>
 </ion-footer>
