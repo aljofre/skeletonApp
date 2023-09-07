@@ -1,57 +1,63 @@
 import { Component } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { ActionSheetController, AlertController, Animation, AnimationController } from '@ionic/angular';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss']
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  username: string = '';
+  nombre: string = '';
+  apellido: string = '';
+  nivelEducacion: string = '';
+  fechaNacimiento: Date | null = null; // Inicializa fechaNacimiento con null
+
+  constructor(
+    public actionSheetController: ActionSheetController,
+    public alertController: AlertController,
+    private animationCtrl: AnimationController
+  ) {}
+
+  limpiarCampos() {
+    this.nombre = '';
+    this.apellido = '';
+    this.nivelEducacion = '';
+    this.fechaNacimiento = null;
   
-  // Propiedades para el formulario de cliente
-  displayForm = false;
-  client = {
-    firstName: '',
-    lastName: '',
-    birthDate: null
-  };
+    const slideInAnimation = this.createSlideInAnimation();
+    
+    if (slideInAnimation) {
+      slideInAnimation.play();
+    }
+  }
+  
 
-  constructor(private actionSheetController: ActionSheetController, private router: Router) {}
-
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Comandos',
-      buttons: [{
-        text: 'GV55',
-        handler: () => {
-          console.log('GV55 clicked');
-        }
-      }, {
-        text: 'GV75',
-        handler: () => {
-          console.log('GV75 clicked');
-        }
-      }]
+  async mostrarInfo() {
+    const alert = await this.alertController.create({
+      header: 'Información',
+      message: `Nombre: ${this.nombre}<br>Apellido: ${this.apellido}`,
+      buttons: ['OK'],
     });
-    await actionSheet.present();
+
+    await alert.present();
   }
 
-  // Método para mostrar el formulario de cliente
-  showClientForm() {
-    this.router.navigate(['/access']);
-
-    // Si necesitas navegar a otra página cuando hagas clic en "INGRESAR CLIENTE", entonces usa el siguiente código:
-    // this.router.navigate(['/access']); // Por ejemplo, si quieres navegar a la página 'access.page.html'.
-    // Pero si solo quieres mostrar el formulario en la misma página, no necesitas la navegación.
+  private createSlideInAnimation(): Animation | null {
+    const nombreInput = document.querySelector('.nombre-input');
+    
+    if (!nombreInput) {
+      return null;
+    }
+  
+    const animation = this.animationCtrl.create()
+      .addElement(nombreInput)
+      .duration(1000)
+      .iterations(1)
+      .fromTo('transform', 'translateX(-100%)', 'translateX(0)');
+  
+    return animation;
   }
-
-  // Método para guardar temporalmente el cliente ingresado y ocultar el formulario
-  saveClient() {
-    console.log('Cliente guardado temporalmente:', this.client);
-    this.displayForm = false;
-    this.client = { firstName: '', lastName: '', birthDate: null }; // Reset del formulario
-  }
-
-  // Otros métodos y lógica pueden seguir aquí...
+  
 }

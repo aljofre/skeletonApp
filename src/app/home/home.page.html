@@ -5,48 +5,37 @@
 </ion-header>
 
 <ion-content>
-  <div class="action-buttons">
-    <ion-button (click)="presentActionSheet()">COMANDOS</ion-button>
-    <ion-button (click)="showClientForm()">IR A INGRESAR CLIENTE</ion-button>
-  </div>
-
   <div class="ion-text-center">
-    <div class="track">
-      <ion-card id="card" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">DENWA</a>
-          <ion-img src="assets/logo_denwa.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-    <div class="track">
-      <ion-card id="card1" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">Q - ANALITICS</a>
-          <ion-img src="assets/logo_qa.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-
-    <div class="track">
-      <ion-card id="card2" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">CONSULTA IMEI</a>
-          <ion-img src="assets/consulta_imei.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
+    <div class="user-info">
+      <p>Usuario: {{ username }}</p>
+      <ion-item class="nombre-input">
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="nombre" name="nombre" type="text"></ion-input>
+      </ion-item>
+      <ion-item class="apellido-input">
+        <ion-label position="stacked">Apellido</ion-label>
+        <ion-input [(ngModel)]="apellido" name="apellido" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nivel de Educación</ion-label>
+        <ion-input [(ngModel)]="nivelEducacion" name="nivelEducacion" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker (dateChange)="onDateChange($event)"></mat-datepicker>
+      </ion-item>
+      <ion-button expand="full" (click)="limpiarCampos()">Limpiar</ion-button>
+      <ion-button expand="full" (click)="mostrarInfo()">Mostrar</ion-button>
     </div>
   </div>
-  
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
     <div class="ion-text-center">
       <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
-      <a href="/">Inicio</a> | 
+      <a href="/">Inicio</a> |
       <a href="https://mavigps.com/">Contacto</a>
     </div>
   </ion-toolbar>

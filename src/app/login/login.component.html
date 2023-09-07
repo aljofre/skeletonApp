@@ -1,42 +1,43 @@
 <ion-header>
-  <ion-toolbar>
+    <ion-toolbar>
       <ion-title>BIENVENIDO</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-text-center">
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-text-center">
       <img src="assets/logo.png" alt="Logo">
       <ion-title [@titleAnimation]="titleState" (@titleAnimation.done)="animateTitle()">SOPORTE MAVIGPS</ion-title>
-  </div>
-
-  <div class="ion-text-center">
+    </div>
+  
+    <div class="ion-text-center">
       <h1>Autenticación</h1>
       <ion-list>
-          <ion-input 
-              type="text" 
-              [(ngModel)]="user.usuario" 
-              (ionClear)="onInputCleared()" 
-              [@shakeAnimation]="shakeState" 
-              placeholder="Usuario">
-          </ion-input>
-
-          <ion-input 
-              type="password" 
-              [(ngModel)]="user.password" 
-              (ionClear)="onInputCleared()" 
-              [@shakeAnimation]="shakeState" 
-              placeholder="Contraseña">
-          </ion-input>
+        <ion-input 
+            type="text" 
+            [(ngModel)]="user.usuario" 
+            (ionClear)="onInputCleared()" 
+            [@shakeAnimation]="shakeState" 
+            placeholder="Usuario">
+        </ion-input>
+  
+        <ion-input 
+            type="password" 
+            [(ngModel)]="user.password" 
+            (ionClear)="onInputCleared()" 
+            [@shakeAnimation]="shakeState" 
+            placeholder="Contraseña">
+        </ion-input>
       </ion-list>
       <ion-button expand="block" (click)="autenticar()">Ingresar</ion-button>
-  </div>
-</ion-content>
-
-<ion-footer>
-  <div class="ion-text-center">
+    </div>
+  </ion-content>
+  
+  <ion-footer>
+    <div class="ion-text-center">
       <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
       <a href="/">Inicio</a> | 
       <a href="https://mavigps.com/">Contacto</a>
-  </div>
-</ion-footer>
+    </div>
+  </ion-footer>
+  
