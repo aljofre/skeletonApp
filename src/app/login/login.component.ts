@@ -56,7 +56,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
   })
 
-export class LoginComponent {
+  export class LoginComponent {
     user: { usuario: string, password: string } = { usuario: '', password: '' };
     titleState = 'center';
     shakeState: string = 'inactive';
@@ -74,9 +74,9 @@ export class LoginComponent {
       onInputCleared() {
         this.shakeState = 'active';
         setTimeout(() => this.shakeState = 'inactive', 1500); 
-      }
+    }
 
-      validateInputs() {
+    validateInputs() {
         const userRegex = /^[a-zA-Z0-9]{3,8}$/;
         const passRegex = /^\d{4}$/;
     
@@ -94,21 +94,15 @@ export class LoginComponent {
         }
     
         return true;
-      }
-
-
-      autenticar() {
-        if (!this.validateInputs()) return;
-    
-        if (this.user.usuario === "admin" && this.user.password === "1234") {
-          alert("¡Autenticación exitosa!");
-          this.router.navigate(['/home']);
-        } else {
-          alert("Usuario o contraseña incorrectos. Intente nuevamente.");
-          this.shakeState = 'active';
-          setTimeout(() => this.shakeState = 'inactive', 1500);
-        }
-      }
-    
-      constructor(private router: Router) {}
     }
+
+    autenticar() {
+      if (this.validateInputs()) {
+          
+          localStorage.setItem('loggedInUser', JSON.stringify(this.user));
+          this.router.navigate(['/home']);
+      }
+  }
+    
+    constructor(private router: Router) {}
+}

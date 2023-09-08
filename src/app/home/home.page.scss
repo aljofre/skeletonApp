@@ -1,17 +1,17 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-// Definición de colores
-$background-color: white;
-$primary-color: rgb(114, 0, 0); 
-$secondary-color: #9c6a6a;
-$dark-color: #333; // Nuevo color oscuro
 
-/* Contenido general */
+$background-color: rgb(0, 0, 0);
+$primary-color: rgb(255, 255, 255); 
+$secondary-color: #bdbdbd;
+$dark-color: #707070; 
+
+
 ion-content {
   --background: $background-color;
 }
 
-/* Cabecera */
+
 ion-header {
   ion-toolbar {
     --background: $primary-color;
@@ -19,19 +19,19 @@ ion-header {
   }
 }
 
-/* Texto centrado */
+
 .ion-text-center {
   color: $primary-color;
 }
 
-/* Botón de ingreso */
+
 ion-button {
   --background: $primary-color;
-  --color: $background-color;
+  --color: #000000;
   --background-activated: darken($primary-color, 15%);
 }
 
-/* Input fields */
+
 ion-input {
   --background: $secondary-color;
   --color: $primary-color;
@@ -39,25 +39,25 @@ ion-input {
 }
 
 ion-card {
-  width: auto;  // Ancho mediano que prefieras
-  height: auto; // Alto mediano que prefieras
-  margin: auto; // Centra la card horizontalmente si la card está dentro de un contenedor flex
+  width: auto;  
+  height: auto; 
+  margin: auto; 
 }
-/* Ajuste de imagen en ion-card */
+
 ion-card ion-img {
   position: center;
   width: 75%;
   height: 75%;
-  object-fit: cover;
+ 
 
 }
 
-/* Estilo para los divs con clase track */
+
 .track {
   background-color: $dark-color;
 }
 
-/* Pie de página */
+
 ion-footer {
   --background: $primary-color;
   --color: $background-color;

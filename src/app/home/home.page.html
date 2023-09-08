@@ -1,45 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>SOPORTE MAVIGPS</ion-title>
+    <ion-title>SkeletonAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="action-buttons">
-    <ion-button (click)="presentActionSheet()">COMANDOS</ion-button>
-    <ion-button (click)="showClientForm()">IR A INGRESAR CLIENTE</ion-button>
-  </div>
 
   <div class="ion-text-center">
-    <div class="track">
-      <ion-card id="card" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">DENWA</a>
-          <ion-img src="assets/logo_denwa.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-    <div class="track">
-      <ion-card id="card1" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">Q - ANALITICS</a>
-          <ion-img src="assets/logo_qa.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-
-    <div class="track">
-      <ion-card id="card2" button="true">
-        <ion-card-content>
-          <a href="agreGARLAWEBAQUIII">CONSULTA IMEI</a>
-          <ion-img src="assets/consulta_imei.png" alt=""></ion-img>
-        </ion-card-content>
-      </ion-card>
-    </div>
+    <h1>Bienvenido!</h1>
+    <p>USUARIO: {{user.usuario}} </p>
+    <ion-title>Información Adicional</ion-title>
   </div>
-  
+
+  <ion-list>
+    <ion-item [@slideRight]="animateInput">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="client.firstName"></ion-input>
+    </ion-item>
+
+    <ion-item [@slideRight]="animateInput">
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="client.lastName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Fecha de Nacimiento:</ion-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="client.birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </ion-item>
+
+    <div class="ion-padding">
+      <ion-button (click)="guardar()">Guardar</ion-button>
+      <ion-button (click)="limpiarInputs()">Limpiar</ion-button>
+      <ion-button (click)="mostrarInformacion()">Mostrar</ion-button>
+    </div>
+  </ion-list>
 </ion-content>
 
 <ion-footer>
@@ -47,7 +46,6 @@
     <div class="ion-text-center">
       <p>&copy; 2023 ARIETIS. Todos los derechos reservados.</p>
       <a href="/">Inicio</a> | 
-      <a href="https://mavigps.com/">Contacto</a>
     </div>
   </ion-toolbar>
 </ion-footer>
