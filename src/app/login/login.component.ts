@@ -73,7 +73,7 @@ export class LoginComponent {
 
       onInputCleared() {
         this.shakeState = 'active';
-        setTimeout(() => this.shakeState = 'inactive', 1500); // Restablecer después de 1.5 segundos
+        setTimeout(() => this.shakeState = 'inactive', 1500); 
       }
 
       validateInputs() {
